@@ -1,0 +1,35 @@
+def main():
+    n = int(input("Ingrese un número: "))
+
+    A = [[0] * n for _ in range(n)] 
+
+    valor = 1
+    filaInicio, filaFin = 0, n - 1
+    columnaInicio, columnaFin = 0, n - 1
+
+    while valor <= n * n:
+        if filaInicio <= filaFin:
+            for i in range(columnaInicio, columnaFin + 1):
+                A[filaInicio][i], valor = valor, valor + 1
+            filaInicio += 1
+
+        if columnaFin >= columnaInicio:
+            for i in range(filaInicio, filaFin + 1):
+                A[i][columnaFin], valor = valor, valor + 1
+            columnaFin -= 1
+
+        if filaFin >= filaInicio:
+            for i in range(columnaFin, columnaInicio - 1, -1):
+                A[filaFin][i], valor = valor, valor + 1
+            filaFin -= 1
+
+        if columnaInicio <= columnaFin:
+            for i in range(filaFin, filaInicio - 1, -1):
+                A[i][columnaInicio], valor = valor, valor + 1
+            columnaInicio += 1
+
+    for row in A:
+        print("\t".join(map(str, row)))
+
+if __name__ == "__main__":
+    main()
