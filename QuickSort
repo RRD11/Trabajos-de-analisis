@@ -1,0 +1,14 @@
+def Rap(A):
+    if len(A) <= 1:
+        return A
+    P = A[len(A) // 2]
+    Izq = [x for x in A if x < P]
+    M = [x for x in A if x == P]
+    Der = [x for x in A if x > P]
+    return Rap(Izq) + M + Rap(Der)
+
+#ejemplo de uso
+A = [64, 34, 25, 12, 22, 11, 90]
+print("Lista ordenada:", A)
+A = Rap(A)
+print("Lista ordenada:", A)
