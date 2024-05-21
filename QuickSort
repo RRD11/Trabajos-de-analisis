@@ -8,7 +8,11 @@ def Rap(A):
     return Rap(Izq) + M + Rap(Der)
 
 #ejemplo de uso
-A = [64, 34, 25, 12, 22, 11, 90]
-print("Lista ordenada:", A)
-A = Rap(A)
+A = []
+print("Ingresa los números uno por uno (escribir 'fin' para terminar):")
+while True:
+    val = input()
+    if val.lower() == 'fin':
+        break
+    A.append(int(val))
 print("Lista ordenada:", A)
