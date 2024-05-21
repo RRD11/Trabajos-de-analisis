@@ -23,8 +23,11 @@ def Merge(A):
             j += 1
             k += 1
 
-# Ejemplo de uso:
-A = [64, 34, 25, 12, 32, 11, 90]
-print("Lista ordenada:", A)
-Merge(A)
+A = []
+print("Ingresa los números uno por uno (escribir 'fin' para terminar):")
+while True:
+    val = input()
+    if val.lower() == 'fin':
+        break
+    A.append(int(val))
 print("Lista ordenada:", A)
